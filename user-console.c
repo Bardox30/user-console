@@ -4,7 +4,7 @@
 int main()
 {    
     char user[100][20], pass[100][10], userSearch[20], passSearch[10], tempUser[20], tempPass[10], menuRegister;
-    int found = 0; // 1 (true) if it is found
+    int found; // 1 (true) if it is found
     int inner, outer, didSwap, ctr, menu, plusPass=0, plussUser=0;
 
     //  ALGORITHM
@@ -42,6 +42,7 @@ int main()
         {
         //  LOGIN
         case 1:
+            found=0;
             system("cls");
             printf("User: ");
             scanf(" %s", userSearch);
