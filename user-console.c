@@ -42,7 +42,7 @@ int main()
         {
         //  LOGIN
         case 1:
-            found=0;
+            found=0; // set to zero always 'case 1' starts because of the conditional 'if' to 'found=1'
             system("cls");
             printf("User: ");
             scanf(" %s", userSearch);
