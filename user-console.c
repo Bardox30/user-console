@@ -1,3 +1,13 @@
+#ifdef _WIN64
+    #define CLEAR system("cls")
+#endif
+#ifdef _WIN32
+    #define CLEAR system("cls")
+#endif 
+#ifdef __unix__
+    #define CLEAR system("clear")
+#endif 
+
 #include <stdio.h>
 #include <string.h>
 
@@ -43,7 +53,7 @@ int main()
         //  LOGIN
         case 1:
             found=0; // set to zero always 'case 1' starts because of the conditional 'if' to 'found=1'
-            system("cls");
+            CLEAR;
             printf("User: ");
             scanf(" %s", userSearch);
             printf("Password: ");
@@ -73,7 +83,7 @@ int main()
         
         //  REGISTER
         case 2:            
-            system("cls");
+            CLEAR;
             printf("\nWelcome to register, you can create a new user here.\n\n");
             printf("Do you want to create a new user? (Y/N): ");
             scanf(" %c", &menuRegister);
@@ -96,7 +106,7 @@ int main()
         
         // LIST ALL USERS
         case 3:
-            system("cls");            
+            CLEAR;            
             printf("List of user:\n");
             for(ctr=0; ctr<plussUser; ctr++)
             {
